@@ -5,12 +5,16 @@ let resultForm = $("#resultForm");
 
 function testCode(code, tests) {
     for (let testId in tests) {
-        let inputs = tests[testId].inputs;
-        let outputs = tests[testId].outputs;
+        let input = tests[testId].input;
+        let output = tests[testId].output;
 
-        eval(code);
+        try {
+            eval(code);
+        } catch(err) {
+            console.log(err.message);
+        }
 
-        if (typeof result !== 'undefined' && JSON.stringify(result) === JSON.stringify(outputs)) {
+        if (typeof result !== 'undefined' && JSON.stringify(result) === JSON.stringify(output)) {
             continue;
         } else {
             return parseInt(testId) + 1;
@@ -42,9 +46,8 @@ resultForm.submit((e) => {
         if (tasks[currentTaskId].status != "passed") {
             tasks[currentTaskId].status = "failed";
             tasks[currentTaskId].statusMsg = statusMsg;
+            tasks[currentTaskId].code = code;
         }
-
-        tasks[currentTaskId].lastAnswer = code;
     } else {
         testResult = testCode(code, currentTask.tests);
 
@@ -58,9 +61,8 @@ resultForm.submit((e) => {
             if (tasks[currentTaskId].status != "passed") {
                 tasks[currentTaskId].status = "failed";
                 tasks[currentTaskId].statusMsg = statusMsg;
+                tasks[currentTaskId].code = code;
             }
-
-            tasks[currentTaskId].lastAnswer = code;
         } else {
             let statusMsg = `Passed`;
 
@@ -70,8 +72,7 @@ resultForm.submit((e) => {
 
             tasks[currentTaskId].status = "passed";
             tasks[currentTaskId].statusMsg = statusMsg;
-            tasks[currentTaskId].lastAnswer = code;
-            tasks[currentTaskId].lastCorrectAnswer = code;
+            tasks[currentTaskId].code = code;
         }
     }
 });
@@ -93,12 +94,12 @@ function showTask(id = 0) {
     currentTaskId = id;
     currentTask = tasks[id];
 
-    // $("#title").text(`${id + 1}. ${currentTask.title}`);
     $("#description").text(currentTask.description);
     $("#pretests").html("");
-    $("#code").val(currentTask.lastCorrectAnswer);
-    $("#status").text(currentTask.statusMsg);
+    $("#code").val(currentTask.code);
+    $("#status").text(currentTask.statusMsg === "" ? "Not sent" : currentTask.statusMsg);
     $("#status").removeClass("text-danger text-success text-primary font-weight-bold");
+    
     if (currentTask.status == "passed") {
         $("#status").addClass("text-success font-weight-bold");
     } else if (currentTask.status == "failed") {
@@ -107,10 +108,10 @@ function showTask(id = 0) {
     
     currentTask.pretests.forEach(pretest => {
         $("#pretests").append(`
-        <tr>
-            <td>${JSON.stringify(pretest.inputs)}</td>
-            <td>${JSON.stringify(pretest.outputs)}</td>
-        </tr>
+            <tr>
+                <td>${JSON.stringify(pretest.input)}</td>
+                <td>${JSON.stringify(pretest.output)}</td>
+            </tr>
         `);
     });
 }
