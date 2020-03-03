@@ -2,8 +2,8 @@
     {
         "title": "Echo",
         "description": "Given an integer. Give it back.",
-        "status": "passed",
-        "statusMsg": "Passed",
+        "status": "",
+        "statusMsg": "",
         "code": "",
         "pretests": [
             {
@@ -41,8 +41,8 @@
     {
         "title": "A + B",
         "description": "Given two integers: A and B. Calculate A + B.",
-        "status": "failed",
-        "statusMsg": "Pretest #1 failed",
+        "status": "",
+        "statusMsg": "",
         "code": "",
         "pretests": [
             {
@@ -80,7 +80,7 @@
     {
         "title": "Marbles",
         "description": "You have got a box full of marbles each colored with one of the N colors. There are many marbles from each color. Given N, find what is the guaranteed minimum number of marbles you need to pick to have at least 2 marbles with same color.",
-        "status": "none",
+        "status": "",
         "statusMsg": "",
         "code": "",
         "pretests": [
@@ -123,7 +123,7 @@
     {
         "title": "Big-Small",
         "description": "Given two integers: A and B. Show \">\" if A is greater than B, \"=\" if A is equal to B and \"<\" if A is less than B.",
-        "status": "none",
+        "status": "",
         "statusMsg": "",
         "code": "",
         "pretests": [
@@ -170,7 +170,7 @@
     {
         "title": "Basket Swap",
         "description": "Jimmy and Jamie have a basket of apples each. There are N apples in Jimmy's basket and M apples in Jamie's. They swapped their baskets and ate and apple each. Calculate their number of apples.",
-        "status": "none",
+        "status": "",
         "statusMsg": "",
         "code": "",
         "pretests": [
