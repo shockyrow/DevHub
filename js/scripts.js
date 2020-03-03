@@ -6,7 +6,7 @@ let resultForm = $("#resultForm");
 function testCode(code, tests) {
     for (let testId in tests) {
         let input = tests[testId].input;
-        let output = tests[testId].output;
+        let expectedOutput = tests[testId].output;
 
         try {
             eval(code);
@@ -14,7 +14,7 @@ function testCode(code, tests) {
             console.log(err.message);
         }
 
-        if (typeof result !== 'undefined' && JSON.stringify(result) === JSON.stringify(output)) {
+        if (typeof output !== 'undefined' && JSON.stringify(output) === JSON.stringify(expectedOutput)) {
             continue;
         } else {
             return parseInt(testId) + 1;
@@ -41,6 +41,7 @@ function showTask(id = 0) {
     currentTaskId = id;
     currentTask = tasks[id];
 
+    $("#tasks").val(id);
     $("#description").text(currentTask.description);
     $("#pretests").html("");
     $("#code").val(currentTask.code);
