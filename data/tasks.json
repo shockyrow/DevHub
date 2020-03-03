@@ -1,0 +1,222 @@
+[
+    {
+        "title": "Echo",
+        "description": "Given an integer. Give it back.",
+        "status": "passed",
+        "statusMsg": "Not sent",
+        "lastAnswer": "",
+        "lastCorrectAnswer": "",
+        "pretests": [
+            {
+                "inputs": 5,
+                "outputs": 5
+            },
+            {
+                "inputs": -7,
+                "outputs": -7
+            }
+        ],
+        "tests": [
+            {
+                "inputs": 2003,
+                "outputs": 2003
+            },
+            {
+                "inputs": -1,
+                "outputs": -1
+            },
+            {
+                "inputs": 512,
+                "outputs": 512
+            },
+            {
+                "inputs": -256,
+                "outputs": -256
+            },
+            {
+                "inputs": 128,
+                "outputs": 128
+            }
+        ]
+    },
+    {
+        "title": "A + B",
+        "description": "Given two integers: A and B. Calculate A + B.",
+        "status": "failed",
+        "statusMsg": "Not sent",
+        "lastAnswer": "",
+        "lastCorrectAnswer": "",
+        "pretests": [
+            {
+                "inputs": [2, 3],
+                "outputs": 5
+            },
+            {
+                "inputs": [-9, 7],
+                "outputs": -2
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [2003, -783],
+                "outputs": 1220
+            },
+            {
+                "inputs": [0, -1],
+                "outputs": -1
+            },
+            {
+                "inputs": [512, 512],
+                "outputs": 1024
+            },
+            {
+                "inputs": [-1, -256],
+                "outputs": -257
+            },
+            {
+                "inputs": [-1, 128],
+                "outputs": 127
+            }
+        ]
+    },
+    {
+        "title": "Marbles",
+        "description": "You have got a box full of marbles each colored with one of the N colors. There are many marbles from each color. Given N, find what is the guaranteed minimum number of marbles you need to pick to have at least 2 marbles with same color.",
+        "status": "none",
+        "statusMsg": "Not sent",
+        "lastAnswer": "",
+        "lastCorrectAnswer": "",
+        "pretests": [
+            {
+                "inputs": 2,
+                "outputs": 3
+            },
+            {
+                "inputs": 8,
+                "outputs": 9
+            },
+            {
+                "inputs": 8009,
+                "outputs": 8010
+            }
+        ],
+        "tests": [
+            {
+                "inputs": 2003,
+                "outputs": 2004
+            },
+            {
+                "inputs": 1000000,
+                "outputs": 1000001
+            },
+            {
+                "inputs": 512,
+                "outputs": 513
+            },
+            {
+                "inputs": 256,
+                "outputs": 257
+            },
+            {
+                "inputs": 128,
+                "outputs": 129
+            }
+        ]
+    },
+    {
+        "title": "Big-Small",
+        "description": "Given two integers: A and B. Show \">\" if A is greater than B, \"=\" if A is equal to B and \"<\" if A is less than B.",
+        "status": "none",
+        "statusMsg": "Not sent",
+        "lastAnswer": "",
+        "lastCorrectAnswer": "",
+        "pretests": [
+            {
+                "inputs": [5, 7],
+                "outputs": "<"
+            },
+            {
+                "inputs": [-7, -12],
+                "outputs": ">"
+            },
+            {
+                "inputs": [13, 13],
+                "outputs": "="
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [2003, 1],
+                "outputs": ">"
+            },
+            {
+                "inputs": [3, 1000000],
+                "outputs": "<"
+            },
+            {
+                "inputs": [512, 513],
+                "outputs": "<"
+            },
+            {
+                "inputs": [256, 1],
+                "outputs": ">"
+            },
+            {
+                "inputs": [128, 128],
+                "outputs": "="
+            },
+            {
+                "inputs": [-128, -128],
+                "outputs": "="
+            }
+        ]
+    },
+    {
+        "title": "Basket Swap",
+        "description": "Jimmy and Jamie have a basket of apples each. There are N apples in Jimmy's basket and M apples in Jamie's. They swapped their baskets and ate and apple each. Calculate their number of apples.",
+        "status": "none",
+        "statusMsg": "Not sent",
+        "lastAnswer": "",
+        "lastCorrectAnswer": "",
+        "pretests": [
+            {
+                "inputs": [4, 7],
+                "outputs": [6, 3]
+            },
+            {
+                "inputs": [2, 1],
+                "outputs": [0, 1]
+            },
+            {
+                "inputs": [13, 13],
+                "outputs": [12, 12]
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [2003, 1],
+                "outputs": [0, 2002]
+            },
+            {
+                "inputs": [3, 1000000],
+                "outputs": [999999, 2]
+            },
+            {
+                "inputs": [512, 513],
+                "outputs": [512, 511]
+            },
+            {
+                "inputs": [256, 1],
+                "outputs": [0, 255]
+            },
+            {
+                "inputs": [128, 128],
+                "outputs": [127, 127]
+            },
+            {
+                "inputs": [-128, -128],
+                "outputs": [-129, -129]
+            }
+        ]
+    }
+]
