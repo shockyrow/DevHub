@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevHub</title>
+
+    <!-- 3rd Party Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <element name="navbar"></element>
+
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="pt-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="input-group">
+                                <select id="tasks" class="custom-select"></select>
+
+                                <div class="input-group-append">
+                                    <button id="prevTask" class="btn btn-light border">
+                                        <</button> <button id="nextTask" class="btn btn-light border">>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="description" class="my-4">Task Description</div>
+
+                            <div class="card bg-light">
+                                <div class="card-body p-0">
+                                    <table class="table pretests table-hover table-borderless mb-0">
+                                        <thead class="border-bottom">
+                                            <tr>
+                                                <th style="width: 50%;">Input</th>
+                                                <th style="width: 50%;">Output</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="pretests">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="py-4 sticky-top">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-light text-center">Result</div>
+                        <div class="card-body">
+                            <form id="resultForm">
+                                <textarea id="code" class="form-control" rows="5"></textarea>
+
+                                <div class="text-right mt-3">
+                                    <button id="send" type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-muted small">
+                            <span>Status:</span>
+                            <span id="status" class="text-center">Not sent</span>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light text-center">Tasks</div>
+                        <div class="card-body p-2">
+                            <div id="tasksList" class="row m-0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3rd Part Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/elements.js"></script>
+    <script src="js/tester.js"></script>
+</body>
+
+</html>

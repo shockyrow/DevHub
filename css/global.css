@@ -1,0 +1,8 @@
+.pretests *,
+#code {
+    font-family: monospace;
+}
+
+.card-header {
+    font-weight: bold;
+}
