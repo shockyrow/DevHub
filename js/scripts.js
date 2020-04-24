@@ -10,7 +10,7 @@ function testCode(code, tests) {
 
         try {
             eval(code);
-        } catch(err) {
+        } catch (err) {
             console.log(err.message);
         }
 
@@ -47,13 +47,13 @@ function showTask(id = 0) {
     $("#code").val(currentTask.code);
     $("#status").text(currentTask.statusMsg === "" ? "Not sent" : currentTask.statusMsg);
     $("#status").removeClass("text-danger text-success text-primary font-weight-bold");
-    
+
     if (currentTask.status == "passed") {
         $("#status").addClass("text-success font-weight-bold");
     } else if (currentTask.status == "failed") {
         $("#status").addClass("text-danger font-weight-bold");
     }
-    
+
     currentTask.pretests.forEach(pretest => {
         $("#pretests").append(`
             <tr>
@@ -65,7 +65,9 @@ function showTask(id = 0) {
 }
 
 function objectToFile(object, fileName = "data.json", mimeType = "application/json") {
-    let url = URL.createObjectURL(new File([JSON.stringify(object)], {type: mimeType}));
+    let url = URL.createObjectURL(new File([JSON.stringify(object)], {
+        type: mimeType
+    }));
     let tasksFileLink = document.createElement("a");
 
     tasksFileLink.href = url;
@@ -157,26 +159,25 @@ fetch("data/tasks.json")
     .then(json => {
         tasks = json;
         loadData();
-    })
-;
+    });
 
 $("#prevTask").click(prevTask);
 $("#nextTask").click(nextTask);
 $("#export").click(() => objectToFile(tasks, "tasks.json"));
 $("#import").click(() => $("#db").click());
-$("#db").change(function() {
+$("#db").change(function () {
     let reader = new FileReader();
     reader.readAsText(this.files[0], "UTF-8");
     reader.onload = (e) => {
         try {
             tasks = JSON.parse(e.target.result);
             loadData();
-        } catch(err) {
+        } catch (err) {
             // Error
         }
     };
 });
-$("#tasks").change(function() {
+$("#tasks").change(function () {
     let taskId = $(this).val();
     showTask(taskId);
     $("#taskInput").val("");
