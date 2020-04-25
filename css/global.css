@@ -6,3 +6,7 @@
 .card-header {
     font-weight: bold;
 }
+
+.strike-through {
+    text-decoration: line-through !important;
+}

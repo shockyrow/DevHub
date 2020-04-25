@@ -95,7 +95,7 @@ function loadData() {
 
     tasks.forEach((task, index) => {
         $("#tasks").append(`<option value="${index}">${index + 1}. ${task.title}${task.status == "passed"? " (OK)" : ""}</option>`);
-        $("#tasksList").append(`<div class="col m-0 p-1"><button class="btn btn-block ${task.status === "" ? "btn-light border" : (task.status == "passed" ? "btn-success" : "btn-outline-danger")}" onclick="showTask(${index})">${index + 1}</button></div>`);
+        $("#tasksList").append(`<button class="btn btn-light text-left text-truncate m-0 ${task.status === "" ? "" : (task.status == "passed" ? "text-success strike-through" : "text-primary")}" onclick="showTask(${index})">${index + 1}. ${task.title}</button>`);
     });
 
     $("#tasks").val(currentTaskId);
