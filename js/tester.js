@@ -101,6 +101,10 @@ function loadData() {
     $("#tasks").val(currentTaskId);
 }
 
+function autosave() {
+    window.localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
 resultForm.submit((e) => {
     e.preventDefault();
 
@@ -151,15 +155,22 @@ resultForm.submit((e) => {
         }
     }
 
+    autosave();
     loadData();
 });
 
-fetch("data/tasks.json")
-    .then(response => response.json())
-    .then(json => {
-        tasks = json;
-        loadData();
-    });
+if (window.localStorage.getItem('tasks') != null) {
+    tasks = JSON.parse(window.localStorage.getItem('tasks'));
+    loadData();
+} else {
+    fetch("data/tasks.json")
+        .then(response => response.json())
+        .then(json => {
+            tasks = json;
+            autosave();
+            loadData();
+        });
+}
 
 $("#prevTask").click(prevTask);
 $("#nextTask").click(nextTask);
@@ -171,6 +182,7 @@ $("#db").change(function () {
     reader.onload = (e) => {
         try {
             tasks = JSON.parse(e.target.result);
+            autosave();
             loadData();
         } catch (err) {
             // Error
