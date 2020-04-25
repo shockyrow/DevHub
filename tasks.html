@@ -28,7 +28,10 @@
 
                                 <div class="input-group-append">
                                     <button id="prevTask" class="btn btn-light border">
-                                        <</button> <button id="nextTask" class="btn btn-light border">>
+                                        &lt;
+                                    </button>
+                                    <button id="nextTask" class="btn btn-light border">
+                                        &gt;
                                     </button>
                                 </div>
                             </div>
@@ -87,6 +90,9 @@
                                         <line x1="12" y1="3" x2="12" y2="15"></line>
                                     </svg>
                                 </a>
+
+                                <input id="db" type="file" accept=".json" class="d-none" />
+
                                 <a id="export" href="#" onclick="return false" class="btn btn-sm btn-light">
                                     <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
                                         stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
