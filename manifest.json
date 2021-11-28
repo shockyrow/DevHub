@@ -1,6 +1,6 @@
 {
-    "name": "Developer for Life",
-    "short_name": "dev4life",
+    "name": "DevHub",
+    "short_name": "devhub",
     "icons": [{
         "src": "/appicons/favicon.png",
         "sizes": "128x128",
